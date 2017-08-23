@@ -8,6 +8,7 @@ class SearchBar extends React.Component {
     };
 
     this.onInputChange = this.onInputChange.bind(this);
+    this.onFormSubmit = this.onFormSubmit.bind(this);
   }
 
   onInputChange(event) {
@@ -16,9 +17,13 @@ class SearchBar extends React.Component {
     });
   }
 
+  onFormSubmit(event) {
+    event.preventDefault();
+  }
+
   render() {
     return (
-      <form className='search-form input-group'>
+      <form className='search-form input-group' onSubmit={this.onFormSubmit}>
         <input
           placeholder='Get a five-day forecase in your favourite cities'
           className='form-control'
